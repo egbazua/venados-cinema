@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="resources/Deer.png" type="image/x-icon">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> <!-- Bootstrap 5 -->
+        <link rel="stylesheet" href="styles/style.css">
+        <title>Venados Cinema</title>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-nav">
+                <div class="container-fluid">
+                    <a class="navbar-brand mb-1 logo-effect" href="index.html">
+                        <img src="resources/Deer.png" alt="" width="30" height="24">
+                    </a>
+                    <a class="navbar-brand mb-1 letter-effect" href="index.html">Venados Cinema</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active letter-effect" aria-current="page" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active letter-effect" href="cartelera.html">Cartelera</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link active dropdown-toggle letter-effect" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Más
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="contacto.html">Contacto</a></li>
+                                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#contacto">Creador</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                  </div>
+                </div>
+            </nav>
+        </header>
+        <section id="formulario-contacto" class="container-fluid">
+            <h1 class="p-4">Comprar boletos</h1>
+            <form class="row g-3 form-zona p-4 mb-4" method="POST" action="../venados-cinema/server/controlador.php">
+                <div class="col-md-6">
+                  <label for="validationServer01" class="form-label">Película</label>
+                  <select class="form-select" id="validationCustom04" required name="peliculaNombre">
+                    <option selected disabled value="">Escoge...</option>
+                    <option value="Avengers: Infinity War">Avengers: Infinity War</option>
+                    <option value="Star Wars: Episode IX">Star Wars: Episode IX</option>
+                    <option value="Toy Story 4">Toy Story 4</option>
+                    <option value="Pulp Fiction">Pulp Fiction</option>
+                    <option value="Rapido y Furioso 9">Rapido y Furioso 9</option>
+                    <option value="Los Jefes">Los Jefes</option>
+                    <option value="Los Increibles">Los Increibles</option>
+                    <option value="Godzilla vs Kong">Godzilla vs Kong</option>
+                    <option value="Hercules">Hercules</option>
+                  </select>
+                  <div class="valid-feedback">
+                    ¡Correcto!
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="validationServer02" class="form-label">Horario (A día de mañana)</label>
+                  <select class="form-select" id="validationCustom04" required name="horario">
+                    <option selected disabled value="">Escoge...</option>
+                    <option value="12:00 PM">12:00 PM</option>
+                    <option value="02:00 PM">02:00 PM</option>
+                    <option value="04:00 PM">04:00 PM</option>
+                    <option value="06:00 PM">06:00 PM</option>
+                    <option value="08:00 PM">08:00 PM</option>
+                    <option value="10:00 PM">10:00 PM</option>
+                  </select>
+                  <div class="valid-feedback">
+                    ¡Correcto!
+                  </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="validationServer02" class="form-label">Cantidad de Boletos</label>
+                    <input type="number" class="form-control" id="cantidadBoletos" placeholder="1, 2, 3, 4, 5" onBlur="cantidadTotal()" required name="cantidadBoletos" min="1" minlength="1" maxlength="2" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                    <div class="valid-feedback">
+                      ¡Correcto!
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="validationServer02" class="form-label">Nombre Completo</label>
+                    <input type="text" class="form-control" id="validationServer02" placeholder="Ernesto Rojas" required name="nombreCompleto" pattern="[a-zA-Z ]{2,254}" onkeypress='return event.charCode == 32 || (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 160 && event.charCode <= 163) || event.charCode == 130'>
+                    <div class="valid-feedback">
+                      ¡Correcto!
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="validationServer02" class="form-label">Celular</label>
+                    <input type="text" class="form-control " id="validationServer02" placeholder="6221422064" required name="celular" onkeypress='return event.charCode >= 48 && event.charCode <= 57' minlength="10" maxlength="10">
+                    <div class="valid-feedback">
+                      ¡Correcto!
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="validationServer02" class="form-label">Correo Electrónico</label>
+                    <input type="text" class="form-control " id="validationServer02" placeholder="ernesto.rojas@gmail.com" required name="correoElectronico" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
+                    <div class="valid-feedback">
+                      ¡Correcto!
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="validationServer02" class="form-label">Método de Pago</label>
+                    <select class="form-select" id="validationCustom04" required name="metodoPago">
+                      <option selected disabled value="">Escoge...</option>
+                      <option value="Paypal">Paypal</option>
+                      <option value="OXXO">OXXO</option>
+                      <option value="Transferencia">Transferencia</option>
+                      <option value="Tarjeta de Débito o Crédito">Tarjeta de Débito o Crédito</option>
+                    </select>
+                    <div class="valid-feedback">
+                      ¡Correcto!
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="validationServer02" class="form-label">Total (Valor del boleto $50MXN)</label>
+                    <input type="text" class="form-control " readonly id="total" placeholder="$0.00" required name="total">
+                    <div class="valid-feedback">
+                      ¡Correcto!
+                    </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-primary" type="submit" name="botonEnviar" value="2">Enviar datos</button>
+                </div>
+            </form>
+        </section>
+        <footer class="bg-white">
+            <div class="container py-5">
+              <div class="row py-4">
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="resources/Deer.png" alt="" width="30" class="mb-3">
+                  <p class="font-italic text-muted">Venados Cinema es una empresa mexicana dedicada al desarrollo y operación de complejos múltiples de exhibición cinematográfica surgida en el año 2021.</p>
+                  <ul class="list-inline mt-4">
+                    <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></li>
+                    <li class="list-inline-item"><a href="#" target="_blank" title="instagram"><i class="fa fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="#" target="_blank" title="pinterest"><i class="fa fa-pinterest"></i></a></li>
+                    <li class="list-inline-item"><a href="#" target="_blank" title="vimeo"><i class="fa fa-vimeo"></i></a></li>
+                  </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                  <h6 class="text-uppercase font-weight-bold mb-4">MENU</h6>
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><a href="index.html" class="text-muted">Inicio</a></li>
+                    <li class="mb-2"><a href="cartelera.html" class="text-muted">Cartelera</a></li>
+                    <li class="mb-2"><a href="contacto.html" class="text-muted">Contacto</a></li>
+                    <li class="mb-2"><a href="#" class="text-muted" data-bs-toggle="modal" data-bs-target="#contacto">Creador</a></li>
+                  </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                  <h6 class="text-uppercase font-weight-bold mb-4">Redes Sociales</h6>
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><a href="#" class="text-muted">Facebook</a></li>
+                    <li class="mb-2"><a href="#" class="text-muted">Twitter</a></li>
+                    <li class="mb-2"><a href="#" class="text-muted">Instagram</a></li>
+                    <li class="mb-2"><a href="#" class="text-muted">WhatsApp</a></li>
+                  </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-lg-0">
+                  <h6 class="text-uppercase font-weight-bold mb-4">¿Quieres conocer más?</h6>
+                  <p class="text-muted mb-4">¡Estudia en el mejor sitio!</p>
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><a href="http://ith.mx/" class="text-muted">Instituto Tecnológico de Hermosillo</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+        
+            <!-- Copyright -->
+            <div class="bg-light py-4">
+              <div class="container text-center">
+                <p class="text-muted mb-0 py-2">© 2021 Venados Cinema todos los derechos reservados.</p>
+              </div>
+            </div>
+        </footer>
+          <!-- Modal -->
+            <div class="modal fade" id="contacto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Creado por:</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Alumno: ISC. Enrique Gómez Bazúa.</p> 
+                        <p>Grupo: S6A.</p> 
+                        <p>Materia: Programación WEB.</p>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        <script src="script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> <!-- Bootstrap 5 -->
+    </body>
+</html>

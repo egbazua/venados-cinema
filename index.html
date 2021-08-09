@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="resources/Deer.png" type="image/x-icon">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> <!-- Bootstrap 5 -->
+        <link rel="stylesheet" href="styles/style.css">
+        <title>Venados Cinema</title>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-nav">
+                <div class="container-fluid">
+                    <a class="navbar-brand mb-1 logo-effect" href="index.html">
+                        <img src="resources/Deer.png" alt="" width="30" height="24">
+                    </a>
+                    <a class="navbar-brand mb-1 letter-effect" href="index.html">Venados Cinema</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active letter-effect" aria-current="page" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active letter-effect" href="cartelera.html">Cartelera</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link active dropdown-toggle letter-effect" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Más
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="contacto.html">Contacto</a></li>
+                                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#contacto">Creador</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                  </div>
+                </div>
+            </nav>
+        </header>
+        <section id="pelicula-semana" class="">
+            <!-- <div class="container-fluid pelicula-zona">
+                <img src="resources/pelicula-semana-cartelera.jpg" class="img-fluid pelicula-semana-imagen ms-2 rounded float-start" alt="pelicula-cartelera" width="480" height="384">
+                <h4 class="pelicula-semana-title fs-5 ms-4">Película destacada de la Semana 👍</h4>
+                <h2 class="fs-3 pelicula-semana-title-avengers mt-0 ms-4">Avengers: Infinity War</h2>
+                <p class="pelicula-semana-sinopsis ms-4 mt-5">El todopoderoso Thanos ha despertado con la promesa de arrasar con todo a su paso, portando el Guantelete del Infinito, que le confiere un poder incalculable. Los únicos capaces de pararle los pies son los Vengadores y el resto de superhéroes de la galaxia, que deberán estar dispuestos a sacrificarlo todo por un bien mayor. Capitán América e Ironman deberán limar sus diferencias, Black Panther apoyará con sus tropas desde Wakanda, Thor y los Guardianes de la Galaxia e incluso Spider-Man se unirán antes de que los planes de devastación y ruina pongan fin al universo. ¿Serán capaces de frenar el avance del titán del caos?</p>
+                <a class="btn btn-danger pelicula-semana-boton ms-4" href="https://www.youtube.com/watch?v=6ZfuNTqbHE8" role="button">Ir al tráiler</a>
+            </div> -->
+            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <!-- <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div> -->
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="resources/infinity-war.jpg" class="d-block img-carousel rounded img-fluid" alt="..." width="1070px" height="">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5 class="text-white">Avengers: Infinity War</h5>
+                      <p class="text-white">En cartelera</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <img src="resources/star-wars.jpg" class="d-block img-carousel rounded img-fluid" alt="..." width="1070px">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5 class="text-white">Star Wars: Episodio IX</h5>
+                      <p class="text-white">En cartelera</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="resources/toystory.jpg" class="rounded d-block img-carousel img-fluid" alt="..." width="1070px">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5 class="text-white">Toy Story 4</h5>
+                      <p class="text-white">En cartelera</p>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Atrás</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+        </section> 
+        <!-- <section id="noticias" class="">
+            <div class=" noticias-zona">
+                <article class="noticia">
+                    <img src="resources/combos.jpg" class="img-fluid pelicula-semana-imagen ms-2 rounded float-start" alt="pelicula-cartelera" width="480" height="384">
+                    <h5>¡Nuevos combos!</h5>
+                </article>
+                <article class="noticia">
+                    <h5>¡Nuevas películas!</h5>
+                </article>
+                <article class="noticia">
+                    <h5>¡Adquiere tus boletos!</h5>
+                </article>
+                <article class="noticia">
+                    <h5>¡Estamos de vuelta!</h5>
+                </article>
+            </div>
+        </section> -->
+        <footer class="bg-white">
+            <div class="container py-5">
+              <div class="row py-4">
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="resources/Deer.png" alt="" width="30" class="mb-3">
+                  <p class="font-italic text-muted">Venados Cinema es una empresa mexicana dedicada al desarrollo y operación de complejos múltiples de exhibición cinematográfica surgida en el año 2021.</p>
+                  <ul class="list-inline mt-4">
+                    <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></li>
+                    <li class="list-inline-item"><a href="#" target="_blank" title="instagram"><i class="fa fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="#" target="_blank" title="pinterest"><i class="fa fa-pinterest"></i></a></li>
+                    <li class="list-inline-item"><a href="#" target="_blank" title="vimeo"><i class="fa fa-vimeo"></i></a></li>
+                  </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                  <h6 class="text-uppercase font-weight-bold mb-4">MENU</h6>
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><a href="index.html" class="text-muted">Inicio</a></li>
+                    <li class="mb-2"><a href="cartelera.html" class="text-muted">Cartelera</a></li>
+                    <li class="mb-2"><a href="contacto.html" class="text-muted">Contacto</a></li>
+                    <li class="mb-2"><a href="#" class="text-muted" data-bs-toggle="modal" data-bs-target="#contacto">Creador</a></li>
+                  </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                  <h6 class="text-uppercase font-weight-bold mb-4">Redes Sociales</h6>
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><a href="#" class="text-muted">Facebook</a></li>
+                    <li class="mb-2"><a href="#" class="text-muted">Twitter</a></li>
+                    <li class="mb-2"><a href="#" class="text-muted">Instagram</a></li>
+                    <li class="mb-2"><a href="#" class="text-muted">WhatsApp</a></li>
+                  </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-lg-0">
+                    <h6 class="text-uppercase font-weight-bold mb-4">¿Quieres conocer más?</h6>
+                    <p class="text-muted mb-4">¡Estudia en el mejor sitio!</p>
+                    <ul class="list-unstyled mb-0">
+                      <li class="mb-2"><a href="http://ith.mx/" class="text-muted">Instituto Tecnológico de Hermosillo</a></li>
+                    </ul>
+                  </div>
+                <!-- <div class="col-lg-4 col-md-6 mb-lg-0">
+                  <h6 class="text-uppercase font-weight-bold mb-4">Contacto</h6>
+                  <p class="text-muted mb-4">Escribe tu correo electrónico.</p>
+                  <div class="p-1 rounded border">
+                    <div class="input-group">
+                      <input type="email" placeholder="Correo electrónico" aria-describedby="emailHelp" class="form-control border-0 shadow-0">
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+        
+            <!-- Copyright -->
+            <div class="bg-light py-4">
+              <div class="container text-center">
+                <p class="text-muted mb-0 py-2">© 2021 Venados Cinema todos los derechos reservados.</p>
+              </div>
+            </div>
+        </footer>
+          <!-- Modal -->
+            <div class="modal fade" id="contacto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Creado por:</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Alumno: ISC. Enrique Gómez Bazúa.</p> 
+                        <p>Grupo: S6A.</p> 
+                        <p>Materia: Programación WEB.</p>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> <!-- Bootstrap 5 -->
+    </body>
+</html>
